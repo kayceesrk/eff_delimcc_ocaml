@@ -1,9 +1,11 @@
 all:
-	ocamlbuild -lib unix queens_base_multicore.native 
+	ocamlbuild -lib unix queens_base_multicore.native
 	ocamlbuild -I . delimcc_paper_examples.native
 
-eff_of_delimcc: 
-	ocamlbuild -I . eff_of_delimcc.native
+delimcc:
+	# Needs delimcc library
+	ocamlbuild eff_of_delimcc.native
+	ocamlbuild queens_eff_of_delimcc.native
 
 clean:
 	ocamlbuild -clean
