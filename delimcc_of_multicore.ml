@@ -31,7 +31,7 @@ module M : S = struct
 
  let push_prompt {push} = push
  let take_subcont {take} = take
- let push_subcont k v = 
+ let push_subcont k v =
    let k' = Obj.clone_continuation k in
    continue k' v
  let abort {abort} = abort
